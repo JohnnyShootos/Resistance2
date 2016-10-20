@@ -93,7 +93,7 @@ SPAWN_COMPOSITION = {
 		MAIN_ZONE_OBJECTS pushBackUnique _x;
 
 		if (_x isKindOf "StaticWeapon") then {
-			_crewArray = [_x, (createGroup east), false, "", "rhsgref_ins_spotter"] call BIS_fnc_spawnCrew;
+			_crewArray = [_x, (createGroup east), false, "", "O_Soldier_F"] call BIS_fnc_spawnCrew;
 			{MAIN_ZONE_OBJECTS pushBackUnique _x} forEach _crewArray;
 		};
 	} forEach _comp;
@@ -182,7 +182,7 @@ _numTnk = "NumberOfArmored" call BIS_fnc_getParamValue;
 _numHel = "NumberOfHelicopter" call BIS_fnc_getParamValue;
 
 waitUntil {DAC_NewZone == 0};
-_values = ["z1",[1,0,0],[_numInf,2,(_numInf*8),8],[_numVeh,2,(_numVeh*8),8],[_numTnk,2,(_numTnk*8),8],[_numHel,5,50],[0,21,0,2,5]];
+_values = ["z1",[1,0,0],[_numInf,2,(_numInf*8),8],[_numVeh,2,(_numVeh*8),8],[_numTnk,2,(_numTnk*8),8],[_numHel,5,50],[0,10,0,2,5]];
 [_pos,_size,_size,0,0,_values] call DAC_fNewZone;
 
 //Deploy Main Base Objects
@@ -200,7 +200,7 @@ for "_i" from 1 to 3 do {
 		waitUntil {DAC_NewZone == 0};
 		_campName = format["c%1",_i];
 		CAMP_ZONE_NAMES pushBackUnique _campName;
-		_values = [_campName,[1,0,0],[],[],[],[1,3,50,1,100,999,[z1]],[0,21,0,0,5]];
+		_values = [_campName,[1,0,0],[],[],[],[1,3,50,1,100,999,[z1]],[0,10,0,0,5]];
 		[_posCamp,50,50,0,0,_values] call DAC_fNewZone;
 	
 	//Debug Markers
@@ -242,7 +242,7 @@ waitUntil {alive radio_tower && DAC_NewZone == 0};
 ///////////////////Initialise Zone Logic////////////////
 
 //Call in Air support for OPFOR until radio tower is destroyed (5 mins respawn after you knock it out)
-["RHS_Su25SM_CAS_vvs", _pos, _size] spawn RADIO_TOWER_CHECK;
+["O_Plane_CAS_02_F", _pos, _size] spawn RADIO_TOWER_CHECK;
 
 //Main Base logic
 _pos spawn MAIN_BASE_LOGIC;

@@ -107,10 +107,10 @@ switch (_TypNumber) do
 // CSAT (A3) (OPFOR)
 	case 10:
 		{
-			_Unit_Pool_S = ["O_crew_F", "O_helipilot_F", "O_Soldier_SL_F", "O_Soldier_F", "O_Soldier_LAT_F", "O_Soldier_GL_F", "O_Soldier_AR_F", "O_HeavyGunner_F", "O_medic_F"];
-			_Unit_Pool_V = ["O_MRAP_02_F", "O_MRAP_02_gmg_F", "O_MRAP_02_hmg_F", "O_Truck_03_transport_F", "O_Truck_03_covered_F", "O_Truck_03_covered_F", "O_Truck_02_transport_F"];
-			_Unit_Pool_T = ["O_APC_Tracked_02_cannon_F", "O_APC_Wheeled_02_rcws_F", "O_MBT_02_cannon_F", "O_APC_Tracked_02_AA_F"];
-			_Unit_Pool_A = ["O_Heli_Light_02_F", "O_Heli_Transport_04_box_F", "O_Heli_Attack_02_F"];
+			_Unit_Pool_S = ["O_crew_F", "O_helipilot_F", "O_Soldier_SL_F", "O_Soldier_F", "O_Soldier_LAT_F", "O_Soldier_GL_F", "O_Soldier_AR_F", "O_HeavyGunner_F", "O_medic_F","O_Soldier_AA_F"];
+			_Unit_Pool_V = ["O_T_LSV_02_armed_ghex_F","O_MRAP_02_F", "O_MRAP_02_gmg_F", "O_MRAP_02_hmg_F","O_Truck_03_covered_F","O_Truck_03_covered_F"];
+			_Unit_Pool_T = ["O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F", "O_MBT_02_cannon_F", "O_APC_Tracked_02_AA_F"];
+			_Unit_Pool_A = ["O_Heli_Light_02_F","O_Heli_Transport_04_box_F","O_Heli_Attack_02_F","O_T_VTOL_02_infantry_hex_F"];
 		};
 //-------------------------------------------------------------------------------------------------
 // FIA (A3) (OPFOR)

@@ -22,7 +22,7 @@ switch (_CampTyp) do
 	{
 		_campBasic     = ["Flag_CSAT_F",["FirePlace_burning_f",15,10,0],["Land_BagBunker_Tower_F",10,0,0],["Logic",10,15,0],0];
 		_campAmmo      = [["Box_East_Wps_F",20,2,0],["Box_East_WpsSpecial_F",20,0,0],["Box_East_Ammo_F",20,-2,0],["Box_East_Support_F",20,-4,0]];
-		_campStatic    = [["rhs_KORD_high_MSV",-5,15,0,"rhsgref_ins_spotter"],["rhsgref_ins_DSHKM",25,-15,180,"rhsgref_ins_spotter"]];
+		_campStatic    = [["O_HMG_01_high_F",-5,15,315,"O_Soldier_F"],["O_HMG_01_high_F",25,-15,135,"O_Soldier_F"]];
 		_campAddUnit   = [];
 		_campUserObj   = [];
 		_campRandomObj = [];
