@@ -10,3 +10,14 @@ Starting as a guerilla force with limited access to resources work together to l
 - ACRE2 Radio Integration.
 - Designed for use both with and without a headless client.
 - Zone rewards that improve as the mission progresses over time.
+
+# Mods required by this mission
+- CBA_A3
+- ACE3
+- ACRE2
+
+# Suggested Client Side Mods (Optional)
+- ShackTac Hud (ACE3 has map gestures, name tags, group indicators)
+
+# Does this mission require the Apex expansion?
+Yes. Get it.
