@@ -19,6 +19,7 @@ class TFD
 		class objectMapper {};
 		class deployVehicle {};
 		class gatherMapLocations {};
+		class addRallyPointAction {};
 	};
 
 	class IED 
