@@ -37,7 +37,7 @@ MAIN_BASE_LOGIC = {
 	COUNTER_ATTACK = false;
 	AO_CLEAR = false;
 	_trg = createTrigger ["EmptyDetector", _pos, false];
-	_trg setTriggerActivation ["WEST","PRESENT", true];
+	_trg setTriggerActivation ["GUER","PRESENT", true];
 	_trg setTriggerArea [40,40,0,false,40];
 	_trg setTriggerStatements ["this", "COUNTER_ATTACK = true;", "COUNTER_ATTACK = false"];
 
@@ -93,7 +93,7 @@ SPAWN_COMPOSITION = {
 		MAIN_ZONE_OBJECTS pushBackUnique _x;
 
 		if (_x isKindOf "StaticWeapon") then {
-			_crewArray = [_x, (createGroup east), false, "", "O_Soldier_F"] call BIS_fnc_spawnCrew;
+			_crewArray = [_x, (createGroup east), false, "", "O_T_Soldier_F"] call BIS_fnc_spawnCrew;
 			{MAIN_ZONE_OBJECTS pushBackUnique _x} forEach _crewArray;
 		};
 	} forEach _comp;
@@ -110,7 +110,7 @@ CAMP_ZONE_OBJECTS = [];
 MAIN_ZONE_OBJECTS = [];
 
 //AOSIZE
-_size = 750;
+_size = 500;
 
 //Enter blacklist markernames
 _blacklist = [];
@@ -153,7 +153,7 @@ missionNamespace setVariable ["LAST_CHOSEN_LOCATION", _chosenLocationName];
 _pos = [];
 _badSpot = true;
 while {_badSpot} do {
-	_pos = [_chosenLocationPosition,0,1000,30,0,0.25,0] call BIS_fnc_findSafePos;
+	_pos = [_chosenLocationPosition,0,1500,30,0,0.25,0] call BIS_fnc_findSafePos;
 
 	if (_pos isEqualto ([[0,0],0,5,10,0,0,0] call BIS_fnc_findSafePos)) then {
 		_badSpot = true;
@@ -182,7 +182,7 @@ _numTnk = "NumberOfArmored" call BIS_fnc_getParamValue;
 _numHel = "NumberOfHelicopter" call BIS_fnc_getParamValue;
 
 waitUntil {DAC_NewZone == 0};
-_values = ["z1",[1,0,0],[_numInf,2,(_numInf*8),8],[_numVeh,2,(_numVeh*8),8],[_numTnk,2,(_numTnk*8),8],[_numHel,5,50],[0,10,0,2,5]];
+_values = ["z1",[1,0,0],[_numInf,2,(_numInf*8),8],[_numVeh,1,(_numVeh*8),8],[_numTnk,1,(_numTnk*8),8],[_numHel,5,50],[0,1,0,2,5]];
 [_pos,_size,_size,0,0,_values] call DAC_fNewZone;
 
 //Deploy Main Base Objects
@@ -200,7 +200,7 @@ for "_i" from 1 to 3 do {
 		waitUntil {DAC_NewZone == 0};
 		_campName = format["c%1",_i];
 		CAMP_ZONE_NAMES pushBackUnique _campName;
-		_values = [_campName,[1,0,0],[],[],[],[1,3,50,1,100,999,[z1]],[0,10,0,0,5]];
+		_values = [_campName,[_i,0,0],[],[],[],[1,3,50,1,100,999,[z1]],[0,1,0,0,5]];
 		[_posCamp,50,50,0,0,_values] call DAC_fNewZone;
 	
 	//Debug Markers
