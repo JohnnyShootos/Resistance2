@@ -1,5 +1,5 @@
 _condition = {
-    (leader group _player == _player ) && (_player distance getMarkerPos "respawn_guerrila" > 1000) && (_player getVariable ['spawn_beacon_deploy_ready', true])
+    (leader group _player == _player ) && (_player distance getMarkerPos "respawn_guerrila" > 1000) && (_player getVariable ['spawn_beacon_deploy_ready', true]) && ((vehicle player) isKindOf "Man")
 };
 _statement = {
     params ["_target","_player","_params"];
