@@ -54,4 +54,4 @@ startMission = missionNameSpace getVariable ["startMission", false];
 *
 */
 
-scriptedPlayerKit = false;
+scriptedPlayerKit = true;
