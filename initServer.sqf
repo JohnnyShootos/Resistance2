@@ -5,3 +5,4 @@ DEBUG_MODE = [false, true] select ("DebugMode" call BIS_fnc_getParamValue);
 
 setTimeMultiplier ("TimeAccel" call BIS_fnc_getParamValue);
 
+nul = execVM "scripts\baseClear.sqf";

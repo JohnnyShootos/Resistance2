@@ -5,3 +5,7 @@
 _handle = [] execVM "scripts\playerSetup.sqf";
 waitUntil { scriptDone _handle };
 
+//Kit out the player
+if (scriptedPlayerKit) then {
+	_nul = [] execVM "scripts\playerKit.sqf";
+};
